@@ -11,13 +11,13 @@ require 'net/http'
 #
 # ==Example:
 #   require 'pushover'
-#   
+#
 #   Pushover.send('Your message', user: 'pushover_user_key', token: 'pushover_application_token')
-#   
+#
 #   default_pushover_config = Pushover.load_config('/path/to/pushover.conf')
 #   default_pushover_config[:title] = 'Title'
 #   Pushover.save_config('/path/to/pushover.conf', default_pushover_config)
-#   
+#
 #   Pushover.send('Another message', default_pushover_config)
 #
 # For more info on which parameters are available, see https://pushover.net/api.
@@ -26,12 +26,12 @@ require 'net/http'
 module Pushover
   # Pushover API endpoint
   API_URI = 'https://api.pushover.net/1/messages.json'
-  
+
   # Send a notification. Parameters must at least include :user => 'pushover_user_key'
   # and :token => 'pushover_application_token'
   def self.send(message, parameters = {})
     body = { message: message }.merge(parameters)
-    
+
     Net::HTTP.post_form(URI(API_URI), body)
   end
 
