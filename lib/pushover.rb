@@ -7,7 +7,7 @@ require 'net/http'
 ##
 # A simple ruby module for sending notifications via Pushover.
 #
-# Requires a free pushover account: https://pushover.net/.
+# Requires a pushover account: https://pushover.net/.
 #
 # ==Example:
 #   require 'pushover'
@@ -27,8 +27,8 @@ module Pushover
   # Pushover API endpoint
   API_URI = 'https://api.pushover.net/1/messages.json'
 
-  # Send a notification. Parameters must at least include :user => 'pushover_user_key'
-  # and :token => 'pushover_application_token'
+  # Send a notification. Parameters must at least include +:user => 'pushover_user_key'+
+  # and +:token => 'pushover_application_token'+
   def self.send(message, parameters = {})
     body = { message: message }.merge(parameters)
 

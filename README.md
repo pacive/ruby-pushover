@@ -1,7 +1,7 @@
 # Pushover
 A simple ruby module for sending notifications via Pushover.
 
-Requires a free [pushover account](https://pushover.net/).
+Requires a [pushover account](https://pushover.net/).
 
 
 ### Example:
